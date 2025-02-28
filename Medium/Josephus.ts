@@ -12,6 +12,15 @@ var findTheWinner = function (n: number, k: number): number {
   return helper(arr, 0);
 };
 
+const josephusWinner = (n: number, k: number): number => {
+  function helper(n: number): number {
+    if (n === 1) {
+      return 0;
+    }
+    return (helper(n - 1) + k) % n;
+  }
+  return helper(n) + 1;
+};
 //Josephus Problem Optimized
 const josephus = (n: number, k: number): number => {
   let res = 0;
